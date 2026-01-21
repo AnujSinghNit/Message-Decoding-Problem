@@ -1,5 +1,4 @@
 def morse_solver():
-
     morse_map = {
         "._": "A", "_...": "B", "_._.": "C", "_..": "D", ".": "E", ".._.": "F",
         "__.": "G", "....": "H", "..": "I", ".___": "J", "_._": "K", "._..": "L",
@@ -8,26 +7,20 @@ def morse_solver():
         "_.__": "Y", "__..": "Z"
     }
 
-    
     encoded_message = input().strip()
-    
     
     all_decodings = []
 
-    
     def decode(remaining_str, current_word):
-        
         if len(remaining_str) == 0:
             all_decodings.append(current_word)
             return
 
         for i in range(1, 5):
-            
             if i <= len(remaining_str):
-                part = remaining_str[:i]  
+                part = remaining_str[:i]
                 
                 if part in morse_map:
-                    
                     letter = morse_map[part]
                     decode(remaining_str[i:], current_word + letter)
 
@@ -40,3 +33,4 @@ def morse_solver():
 
 if __name__ == "__main__":
     morse_solver()
+
